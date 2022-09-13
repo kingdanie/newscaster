@@ -13,7 +13,15 @@
       mode="left"
       :style="{ minHeight: '40px', fontSize: '12px' }"
     >
-      <a-tab-pane v-for="(menuItem, index) in menuItems" :key="index" :tab="`${menuItem[0]}`"></a-tab-pane>
+      <a-tab-pane v-for="(menuItem, index) in menuItems" :key="index" :tab="`${menuItem[0]}`">
+        <!-- <h1>{{ menuItem[0] }}</h1> -->
+      <!-- <a-card :title="menuItem[0]" :bordered="false">
+        <Articles :PaperUrl="menuItem[1]" />
+    </a-card> -->
+    <div :title="menuItem[0]">
+        <Articles :PaperUrl="menuItem[1]" />
+    </div>
+      </a-tab-pane>
     </a-tabs>
   </section>
 </template>
@@ -22,6 +30,7 @@
   import { ref } from 'vue'
 import type { TabsProps } from 'ant-design-vue'
 import { defineComponent } from 'vue'
+import Articles from './articles.vue'
 
 export default defineComponent({
     data: ()=>({
@@ -29,6 +38,7 @@ export default defineComponent({
         isLoading: false,
   }),
     methods: {
+      
       async getAnswer() {
       // try {
       //   const res = await fetch('newspaper-sources.json')

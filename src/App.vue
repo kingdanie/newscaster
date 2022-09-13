@@ -23,7 +23,7 @@
         </a-menu-item>
       </RouterLink>
       </a-menu> -->
-      <NavMenu />
+      <NavMenu :selectedKeys="selectedKeys"/>
     </a-layout-sider>
     <a-layout>
       <a-layout-header class="newscaster-header header">
