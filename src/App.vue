@@ -1,84 +1,82 @@
 <template>
-  <a-layout>
-  
-    <a-layout-sider theme="light" collapsed-width="0" breakpoint="md" v-model:collapsed="collapsed" :trigger="null" collapsible>
-      <!-- <div class="logo" >Newscaster</div> -->
-      <!-- <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
-        <RouterLink to="/home">
-        <a-menu-item key="1">
-          <user-outlined />
-          <span>Documentation</span>
-        </a-menu-item>
-      </RouterLink>
-      <RouterLink to="/news">
-        <a-menu-item key="2">
-          <video-camera-outlined />
-          <span>News</span>
-        </a-menu-item>          
-      </RouterLink>
-      <RouterLink to="/about">
-        <a-menu-item key="3">
-          <upload-outlined />
-          <span>About</span>
-        </a-menu-item>
-      </RouterLink>
-      </a-menu> -->
-      <NavMenu :selectedKeys="selectedKeys"/>
-    </a-layout-sider>
-    <a-layout>
-      <a-layout-header class="newscaster-header header">
-      <div class="logo" >Newscaster</div>
+  <div class="layout">
+    <!-- <a-layout-sider
+      theme="light"
+      collapsed-width="0"
+      breakpoint="md"
+      v-model:collapsed="collapsed"
+      :trigger="null"
+      collapsible
+    >
+      <NavMenu :selectedKeys="selectedKeys" />
+    </a-layout-sider> -->
+    <!-- <a-layout> -->
+    <a-layout-header class="newscaster-header header">
+      <div class="logo"><a href="/">Newscaster</a></div>
       <div class="newscaster-header-items">
-      
-      <a-menu
-        v-model:selectedKeys="selectedKeys1"
-        theme="dark"
-        mode="horizontal"
-      >
-        <a-menu-item key="1">nav 1</a-menu-item>
-        <a-menu-item key="2">nav 2</a-menu-item>
-        <a-menu-item key="3">nav 3</a-menu-item>
-
-      </a-menu>
-      <a-button type="primary" @click="() => (collapsed = !collapsed)">
-      <MenuUnfoldOutlined v-if="collapsed" />
-      <MenuFoldOutlined v-else />
-    </a-button>
-  </div>
+        <a-button type="primary" @click="showDrawer">
+          <MenuUnfoldOutlined v-if="collapsed" />
+          <MenuFoldOutlined v-else />
+        </a-button>
+      </div>
     </a-layout-header>
-    
-      <!-- <a-layout-header  style="background: #fff; padding: 0">
-        <menu-unfold-outlined
-          v-if="collapsed"
-          class="trigger"
-          @click="() => (collapsed = !collapsed)"
-        />
-        <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
-      </a-layout-header> -->
-  
-      <a-layout-content
-        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
-      >
-        <RouterView />
-      </a-layout-content>
-      <a-layout-footer style="text-align: center">
-        Newscaster {{ Date()}} Copyright
-      </a-layout-footer>
-    </a-layout>
-  </a-layout>
+
+    <a-layout-content>
+      <div class="about">
+        <!-- <a-button type="primary" @click="showDrawer">Open</a-button> -->
+        <a-drawer
+          v-model:visible="visible"
+          class="custom-class"
+          style="color: red"
+          title="Menu"
+          placement="right"
+          @after-visible-change="afterVisibleChange"
+        >
+          <a-menu theme="light" mode="inline">
+            <RouterLink to="/">
+              <a-menu-item key="1">
+                <user-outlined />
+                <span>Latest News</span>
+              </a-menu-item>
+            </RouterLink>
+            <!-- <RouterLink to="/news">
+              <a-menu-item key="2">
+                <video-camera-outlined />
+                <span>News</span>
+              </a-menu-item>
+            </RouterLink> -->
+            <RouterLink to="/about">
+              <a-menu-item key="3">
+                <upload-outlined />
+                <span>About</span>
+              </a-menu-item>
+            </RouterLink>
+          </a-menu>
+        </a-drawer>
+      </div>
+      <RouterView />
+    </a-layout-content>
+    <a-layout-footer style="text-align: center">
+      Newscaster {{ Date() }} Copyright
+    </a-layout-footer>
+    <!-- <a-layout-footer style="text-align: center">
+      Ant Design ©2018 Created by Ant UED
+    </a-layout-footer> -->
+    <!-- </a-layout> -->
+  </div>
 </template>
-<script lang="ts">
+<!-- <script lang="ts">
 import {
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-} from '@ant-design/icons-vue';
-import { defineComponent, ref } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
-import NewsToolbar from './components/NewsToolbar.vue'
-import NavMenu from './components/NavMenu.vue'
+} from "@ant-design/icons-vue";
+import { defineComponent, ref } from "vue";
+import { RouterLink, RouterView } from "vue-router";
+import NewsToolbar from "./components/NewsToolbar.vue";
+import NavMenu from "./components/NavMenu.vue";
 
 export default defineComponent({
   components: {
@@ -90,8 +88,51 @@ export default defineComponent({
   },
   setup() {
     return {
-      selectedKeys: ref<string[]>(['1']),
+      selectedKeys: ref<string[]>(["1"]),
       collapsed: ref<boolean>(false),
+      //visible: ref<boolean>(false),
+    };
+  },
+});
+</script> -->
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import {
+  UserOutlined,
+  VideoCameraOutlined,
+  UploadOutlined,
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+} from "@ant-design/icons-vue";
+export default defineComponent({
+  components: {
+    UserOutlined,
+    VideoCameraOutlined,
+    UploadOutlined,
+    MenuUnfoldOutlined,
+    MenuFoldOutlined,
+  },
+  setup() {
+    const visible = ref<boolean>(false);
+
+    const afterVisibleChange = (bool: boolean) => {
+      console.log("visible", bool);
+    };
+
+    const showDrawer = () => {
+      visible.value = true;
+    };
+
+    const selectedKeys = ref<string[]>(["1"]);
+    const collapsed = ref<boolean>(false);
+
+    return {
+      visible,
+      afterVisibleChange,
+      showDrawer,
+      selectedKeys,
+      collapsed,
     };
   },
 });
@@ -103,6 +144,12 @@ export default defineComponent({
   padding: 0 24px;
   cursor: pointer;
   transition: color 0.3s;
+}
+
+.logo a {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
 }
 
 #components-layout-demo-custom-trigger .trigger:hover {
@@ -119,22 +166,26 @@ export default defineComponent({
   background: #fff;
 }
 
-.ant-layout{
+/* .ant-layout,
+.layout {
   width: 100vw;
-  height: 100%
-}
+  height: 100%;
+} */
 
-.newscaster-header{
+.newscaster-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.newscaster-header-items{
+.newscaster-header-items {
   display: flex;
   align-items: center;
 }
 
-.logo{
-  color: #fff;
+.ant-layout-content {
+  margin: 0px 16px 24px 16px !important;
+  padding: 0px 24px 24px 24px !important;
+  min-height: 75vh;
+  background: "#fff";
 }
 </style>

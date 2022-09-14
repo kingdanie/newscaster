@@ -1,51 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <a-button type="primary" @click="showDrawer">Open</a-button>
-  <a-drawer
-    v-model:visible="visible"
-    class="custom-class"
-    style="color: red"
-    title="Basic Drawer"
-    placement="right"
-    @after-visible-change="afterVisibleChange"
-  >
-    <p>Some contents...</p>
-    <p>Some contents...</p>
-    <p>Some contents...</p>
-  </a-drawer>
+  <div style="margin: 10px auto; padding: rem; max-width: 70%" class="about">
+    <h1>About Us</h1>
+    <p>
+      Newscaster is a newsagregator application that collates the latest news
+      from media houses in Nigeria.
+    </p>
+    <p>
+      This application was built with Vue Js 3 and it was inspired by Damilare
+      Ademeso.
+    </p>
+    <p>For inquires or projects please send an email to danie@philians.com</p>
   </div>
 </template>
 
 <style>
 @media (min-width: 1024px) {
-  .about {
-    min-height: 250px;
-    display: flex;
-    align-items: center;
-  }
 }
 </style>
-<script lang="ts">
-  import { defineComponent, ref } from 'vue';
-  export default defineComponent({
-    setup() {
-      const visible = ref<boolean>(false);
-  
-      const afterVisibleChange = (bool: boolean) => {
-        console.log('visible', bool);
-      };
-  
-      const showDrawer = () => {
-        visible.value = true;
-      };
-  
-      return {
-        visible,
-        afterVisibleChange,
-        showDrawer,
-      };
-    },
-  });
-  </script>
-  
