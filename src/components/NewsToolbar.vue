@@ -39,8 +39,12 @@ export default defineComponent({
   methods: {
     async getAnswer() {
       // try {
+      //    this.isLoading = true
       //   const res = await fetch('newspaper-sources.json')
       //   console.log((await res.json()).details)
+      //    const data = await res.json()
+      //    this.menuItems = data.details
+      //    this.isLoading = false
       //    this.menuItems = (await res.json()).details
       //   console.log(this.menuItems + "what is here")
       //   //return this.menuItems.push((await res.json()).details)
