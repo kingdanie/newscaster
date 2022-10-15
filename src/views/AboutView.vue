@@ -1,6 +1,6 @@
 <template>
   <div style="margin: 10px auto; padding: rem; max-width: 70%" class="about">
-    <h1>About Us</h1>
+    <h1 class="about-header">About Us</h1>
     <p>
       Newscaster is a newsagregator application that collates the latest news
       from media houses in Nigeria.
@@ -14,6 +14,10 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
+@media (min-width: 1024px) {}
+
+.about-header {
+  font-size: 4rem;
+  font-weight: 800;
 }
 </style>
