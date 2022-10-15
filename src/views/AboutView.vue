@@ -1,5 +1,5 @@
 <template>
-  <div style="margin: 10px auto; padding: rem; max-width: 70%" class="about">
+  <div style="margin: 10px auto; padding: 3rem 0; max-width: 70%" class="about">
     <h1 class="about-header">About Us</h1>
     <p>
       Newscaster is a newsagregator application that collates the latest news
@@ -13,11 +13,17 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 @media (min-width: 1024px) {}
 
 .about-header {
   font-size: 4rem;
   font-weight: 800;
+  color: #001529;
+}
+
+p {
+  color: #001529;
+  font-weight: 500;
 }
 </style>

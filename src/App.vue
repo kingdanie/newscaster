@@ -24,19 +24,13 @@
     <a-layout-content>
       <div class="about">
         <!-- <a-button type="primary" @click="showDrawer">Open</a-button> -->
-        <a-drawer
-          v-model:visible="visible"
-          class="custom-class"
-          style="color: red"
-          title="Menu"
-          placement="right"
-          @after-visible-change="afterVisibleChange"
-        >
+        <a-drawer v-model:visible="visible" class="custom-class" style="color: red" title="Menu" placement="right"
+          @after-visible-change="afterVisibleChange">
           <a-menu theme="light" mode="inline">
             <RouterLink to="/">
               <a-menu-item key="1">
-                <user-outlined />
-                <span>Latest News</span>
+                <!-- <user-outlined /> -->
+                <span class="news-link">Latest News</span>
               </a-menu-item>
             </RouterLink>
             <!-- <RouterLink to="/news">
@@ -47,8 +41,8 @@
             </RouterLink> -->
             <RouterLink to="/about">
               <a-menu-item key="3">
-                <upload-outlined />
-                <span>About</span>
+                <!-- <upload-outlined /> -->
+                <span class="news-link">About</span>
               </a-menu-item>
             </RouterLink>
           </a-menu>
@@ -57,7 +51,7 @@
       <RouterView />
     </a-layout-content>
     <a-layout-footer style="text-align: center">
-      Newscaster {{ Date() }} Copyright
+      Copyright © Newscaster {{ Date() }}
     </a-layout-footer>
     <!-- <a-layout-footer style="text-align: center">
       Ant Design ©2018 Created by Ant UED
@@ -138,6 +132,14 @@ export default defineComponent({
 });
 </script>
 <style>
+.layout {
+  background-color: #fff;
+}
+
+.news-link {
+  font-weight: 700;
+}
+
 #components-layout-demo-custom-trigger .trigger {
   font-size: 18px;
   line-height: 64px;
@@ -177,6 +179,7 @@ export default defineComponent({
   align-items: center;
   justify-content: space-between;
 }
+
 .newscaster-header-items {
   display: flex;
   align-items: center;
@@ -186,6 +189,10 @@ export default defineComponent({
   margin: 0px 16px 24px 16px !important;
   padding: 0px 24px 24px 24px !important;
   min-height: 75vh;
-  background: "#fff";
+  background: #fff;
+}
+
+.ant-tabs-tab-btn {
+  font-weight: 700 !important;
 }
 </style>
