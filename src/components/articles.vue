@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, ref } from "vue";
 import spinner from "./spinner.vue";
 import viewArticle from "./ViewArticle.vue";
@@ -82,7 +82,7 @@ export default defineComponent({
     },
   },
   methods: {
-    async getPapers(): Promise<any[]> {
+    async getPapers() {
       console.log("Event Fired");
       const getUrl = this.PaperUrl + "/wp-json/wp/v2/posts?per_page=30";
       //console.log(getUrl)
@@ -102,14 +102,14 @@ export default defineComponent({
       console.log(this.PaperUrl);
       alert("I see you");
     },
-    postInfo(ob: any) {
+    postInfo(ob) {
       console.log(ob);
       this.nModalTitle = ob.title.rendered;
       this.nModalText = ob.content.rendered;
       this.isVisible = true;
       return (this.nModal = !this.nModal);
     },
-    handleOk(e: any) {
+    handleOk(e) {
       return (this.isVisible = false);
     },
   },

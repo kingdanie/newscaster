@@ -67,9 +67,9 @@ import {
   MenuFoldOutlined,
 } from '@ant-design/icons-vue';
 import { defineComponent, ref } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
-import NewsToolbar from './components/NewsToolbar.vue'
-import NavMenu from './components/NavMenu.vue'
+// import { RouterLink, RouterView } from 'vue-router'
+// import NewsToolbar from './components/NewsToolbar.vue'
+// import NavMenu from './components/NavMenu.vue'
 
 export default defineComponent({
   components: {
