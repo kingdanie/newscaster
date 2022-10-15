@@ -7,6 +7,7 @@
   import { Dayjs } from 'dayjs';
   
   export default defineComponent({
+    components: { Dayjs },
     setup() {
       const value = ref<Dayjs>();
       const onPanelChange = (value: Dayjs, mode: string) => {

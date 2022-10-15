@@ -18,11 +18,11 @@ declare module '@vue/runtime-core' {
     AModal: typeof import('ant-design-vue/es')['Modal']
     APageHeader: typeof import('ant-design-vue/es')['PageHeader']
     AResult: typeof import('ant-design-vue/es')['Result']
-    Articles: typeof import('./src/components/articles.vue')['default']
+    Articles: typeof import('./src/components/Articles.vue')['default']
     ASpin: typeof import('ant-design-vue/es')['Spin']
     ATabPane: typeof import('ant-design-vue/es')['TabPane']
     ATabs: typeof import('ant-design-vue/es')['Tabs']
-    Calendar: typeof import('./src/components/calendar.vue')['default']
+    Calendar: typeof import('./src/components/Calendar.vue')['default']
     Drawer: typeof import('./src/components/Drawer.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
@@ -37,7 +37,7 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     Spinner: typeof import('./src/components/spinner.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
-    ViewArticle: typeof import('./src/components/viewArticle.vue')['default']
+    ViewArticle: typeof import('./src/components/ViewArticle.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }

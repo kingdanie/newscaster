@@ -44,7 +44,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import spinner from "./spinner.vue";
-import viewArticle from "./viewArticle.vue";
+import viewArticle from "./ViewArticle.vue";
 import PageTitle from "./PageTitle.vue";
 export default defineComponent({
   props: {

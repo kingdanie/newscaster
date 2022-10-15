@@ -29,7 +29,7 @@ import { RouterLink, RouterView } from "vue-router";
 import { ref } from "vue";
 import type { TabsProps } from "ant-design-vue";
 import { defineComponent } from "vue";
-import Articles from "./articles.vue";
+import Articles from "./Articles.vue";
 
 export default defineComponent({
   data: () => ({
