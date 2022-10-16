@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts">
 import Articles from '@/components/Articles.vue'
 // import Calendar from '@/components/Calendar.vue'
 import { useRouter, useRoute } from 'vue-router'
