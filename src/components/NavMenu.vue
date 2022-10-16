@@ -50,7 +50,7 @@
           }
     }),
       methods: {
-        pushToRoute(item){
+        pushToRoute(item: string){
           //alert(item)
           this.$router.push({name: 'cars', params: { username: item }})
           //this.$router.push(`/cars/${item}`)
