@@ -161,6 +161,7 @@ body {
   color: #001529;
   font-size: 2.5em;
   line-height: 1;
+  font-weight: 600;
 }
 
 .ant-modal-body {
@@ -191,5 +192,8 @@ body {
   .page-title{
     font-size: 2rem;
   }
+  .news-modal .ant-modal-title {
+  font-size: 2em;
+}
 }
 </style>
