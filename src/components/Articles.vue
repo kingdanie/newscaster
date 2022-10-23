@@ -186,4 +186,10 @@ body {
   font-size: 2.5em;
   color: #b6d3eebe;
 }
+
+@media screen and (max-width: 600px) {
+  .page-title{
+    font-size: 2rem;
+  }
+}
 </style>
