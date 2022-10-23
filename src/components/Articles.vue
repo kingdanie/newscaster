@@ -7,6 +7,7 @@
       v-model:visible="isVisible"
       :title="nModalTitle"
       @ok="handleOk"
+      footer=""
     >
       <p v-html="nModalTitle"></p>
       <p v-html="nModalText"></p>
