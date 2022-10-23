@@ -195,4 +195,7 @@ export default defineComponent({
 .ant-tabs-tab-btn {
   font-weight: 700 !important;
 }
+.ant-tabs-content-holder{
+  min-height: 50vh!important;
+}
 </style>

@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AAlert: typeof import('ant-design-vue/es')['Alert']
     AButton: typeof import('ant-design-vue/es')['Button']
     ADrawer: typeof import('ant-design-vue/es')['Drawer']
     ALayoutContent: typeof import('ant-design-vue/es')['LayoutContent']
@@ -23,6 +24,7 @@ declare module '@vue/runtime-core' {
     ATabs: typeof import('ant-design-vue/es')['Tabs']
     Calendar: typeof import('./src/components/Calendar.vue')['default']
     Drawer: typeof import('./src/components/Drawer.vue')['default']
+    ErrorAlert: typeof import('./src/components/ErrorAlert.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']

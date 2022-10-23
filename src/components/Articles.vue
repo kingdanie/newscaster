@@ -35,7 +35,7 @@
         </div>
       </div>
     </a-spin>
-
+    <ErrorAlert  v-if="isError"/>
     <!-- <h1>Component Work!</h1> -->
     <!-- <a-button @click="getPapers()">primary</a-button> -->
   </div>
@@ -46,7 +46,9 @@ import { defineComponent, ref } from "vue";
 import spinner from "./spinner.vue";
 import viewArticle from "./ViewArticle.vue";
 import PageTitle from "./PageTitle.vue";
+import ErrorAlert from '@/components/ErrorAlert.vue'
 export default defineComponent({
+  components: { PageTitle, ErrorAlert },
   props: {
     PaperUrl: String,
     pageTitle: String,
@@ -60,6 +62,7 @@ export default defineComponent({
       nModalText: "",
       nModalTitle: "",
       isVisible: false,
+      isError: false,
     };
   },
   mounted() {
@@ -93,10 +96,12 @@ export default defineComponent({
           "Content-Type": "application/json",
         },
         //body: JSON.stringify(datare) // body data type must match "Content-Type" header
-      }).catch((err) => alert(err));
+      }).catch(
+        (err) => (this.isError = true)  && console.log(err)
+        );
       // console.log(await response.json())
       this.isLoading = false;
-      return await response.json().then((res) => (this.PaperFile = res));
+      return await response.json().then((res) => (this.PaperFile = res))
     },
     pickaboo() {
       console.log(this.PaperUrl);
@@ -113,7 +118,7 @@ export default defineComponent({
       return (this.isVisible = false);
     },
   },
-  components: { PageTitle },
+  components: { PageTitle, ErrorAlert },
 });
 </script>
 
