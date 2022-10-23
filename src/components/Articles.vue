@@ -181,6 +181,7 @@ body {
   font-size: 4rem;
   font-weight: 800;
   color: #001529;
+  line-height: 1;
 }
 
 .article-title {
