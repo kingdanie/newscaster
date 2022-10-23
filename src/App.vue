@@ -28,7 +28,7 @@
           @after-visible-change="afterVisibleChange">
           <a-menu theme="light" mode="inline">
             <RouterLink to="/">
-              <a-menu-item key="1">
+              <a-menu-item key="1" @click="closeDrawer">
                 <!-- <user-outlined /> -->
                 <span class="news-link">Latest News</span>
               </a-menu-item>
@@ -40,7 +40,7 @@
               </a-menu-item>
             </RouterLink> -->
             <RouterLink to="/about">
-              <a-menu-item key="3">
+              <a-menu-item key="3" @click="closeDrawer">
                 <!-- <upload-outlined /> -->
                 <span class="news-link">About</span>
               </a-menu-item>
@@ -117,6 +117,9 @@ export default defineComponent({
     const showDrawer = () => {
       visible.value = true;
     };
+    const closeDrawer = () => {
+      visible.value = false;
+    };
 
     const selectedKeys = ref<string[]>(["1"]);
     const collapsed = ref<boolean>(false);
@@ -127,6 +130,7 @@ export default defineComponent({
       showDrawer,
       selectedKeys,
       collapsed,
+      closeDrawer,
     };
   },
 });
