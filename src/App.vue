@@ -15,8 +15,8 @@
       <div class="logo"><a href="/">Newscaster</a></div>
       <div class="newscaster-header-items">
         <a-button type="primary" @click="showDrawer">
-          <MenuUnfoldOutlined v-if="collapsed" />
-          <MenuFoldOutlined v-else />
+          <MenuOutlined v-if="collapsed" />
+          <MenuOutlined v-else />
         </a-button>
       </div>
     </a-layout-header>
@@ -96,16 +96,18 @@ import {
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
-  MenuUnfoldOutlined,
+  MenuOutlined,
   MenuFoldOutlined,
+  CloseOutlined
 } from "@ant-design/icons-vue";
 export default defineComponent({
   components: {
     UserOutlined,
     VideoCameraOutlined,
     UploadOutlined,
-    MenuUnfoldOutlined,
+    MenuOutlined,
     MenuFoldOutlined,
+    CloseOutlined
   },
   setup() {
     const visible = ref<boolean>(false);
@@ -182,6 +184,7 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 25px;
 }
 
 .newscaster-header-items {
