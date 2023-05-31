@@ -1,6 +1,8 @@
 # newscaster
 
-This template should help get you started developing with Vue 3 in Vite.
+A news aggreator that collates news from different Nigerian News paper websites. This application seeks to harmonize news in one place, so there's no need to check multiple places for latest news.
+
+
 
 ## Recommended IDE Setup
 
